@@ -1,5 +1,5 @@
-var $userTitleInput = $('.titleInput');
-var $userURLInput = $('.urlInput');
+var $userTitleInput = $('.title-input');
+var $userURLInput = $('.url-input');
 
 $('.enter').on('click', function() {
   var title = $userTitleInput.val();
@@ -14,28 +14,28 @@ $('.enter').on('click', function() {
 
   checkEnter();
 
-  $(".bookmarks").append(" \
+  $('.bookmarks').append(" \
     <div class='card'> \
-    <h2 class='bookmarkTitle'>"+title+"</h2></br> \
-    <a href="+url+" class='bookmarkURL'>"+url+"</a></br> \
-    <button class='bookmarkRead'>Read</button> \
-    <button class='bookmarkRemove'>Delete</button> \
+    <h2 class='bookmark-title'>"+title+"</h2></br> \
+    <a href="+url+" class='bookmark-url'>"+url+"</a></br> \
+    <button class='bookmark-read'>Read</button> \
+    <button class='bookmark-remove'>Delete</button> \
     </div>");
 
   updateCardCounter();
 });
 
-$('.bookmarks').on('click', '.bookmarkRead', function() {
+$('.bookmarks').on('click', '.bookmark-read', function() {
   $(this).closest('div').toggleClass('read');
   updateCardCounter();
 });
 
-$('.bookmarks').on('click', '.bookmarkRemove', function() {
+$('.bookmarks').on('click', '.bookmark-remove', function() {
   $(this).closest('div').remove();
   updateCardCounter();
 });
 
-$('.clearRead').on('click', function() {
+$('.clear-read').on('click', function() {
   $('.read').remove();
   updateCardCounter();
 });
@@ -57,9 +57,9 @@ function updateCardCounter() {
   var cardNum = $('.card').length;
   var readNum = $('.read').length;
   var unreadCards = cardNum - readNum;
-  $('.cardCounter').text(cardNum);
-  $('.readCounter').text(readNum);
-  $('.unreadCounter').text(unreadCards);
+  $('.card-counter').text(cardNum);
+  $('.read-counter').text(readNum);
+  $('.unread-counter').text(unreadCards);
 }
 
 
